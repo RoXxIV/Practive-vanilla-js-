@@ -1,0 +1,46 @@
+/*-_-_-_-_-_-_-_-_-_-_POLICES-_-_-_-_-_-_-_-_-_-_*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap");
+/*-_-_-_-_-_-_-_-_-_-_VARIABLES-_-_-_-_-_-_-_-_-_-_*/
+:root {
+  --black: #433d3c;
+  --purple: #944e6c;
+  --white: #e9c496;
+  --green: #83a95c;
+}
+/*-_-_-_-_-_-_-_-_-_-_GLOBAL-_-_-_-_-_-_-_-_-_-_*/
+/*remover input arrow's
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/*-_-_-_-_-_-_-_-_-_-_HEADER-_-_-_-_-_-_-_-_-_-_*/
+header {
+  background-color: var(--black);
+  color: white;
+}
+/*-_-_-_-_-_-_-_-_-_-_ROMAN-_-_-_-_-_-_-_-_-_-_*/
+#roman {
+  background-color: var(--green);
+  padding: 100px 0px;
+}
+#roman input {
+  text-decoration: none;
+  border: none;
+}
+#roman button {
+  font-size: 15px;
+  color: var(--black);
+  background-color: white;
+  /*border: 1.3px solid var(--black);*/
+}
+#roman span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 40px;
+  color: rgba(18, 54, 16, 0.91);
+}
