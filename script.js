@@ -37,7 +37,7 @@ function convertToRoman(num) {
 //ajout dun nouveau post
 function addPostIt(e) {
     newPostItText = document.querySelector("input[type = 'text']").value;
-    list.innerHTML += `<li class=" col-10 col-sm-6 my-1">${newPostItText}</li>`;
+    list.innerHTML += `<li>${newPostItText}</li>`;
     document.querySelector("input[type = 'text']").value = "";
     e.preventDefault();
 
@@ -46,7 +46,28 @@ function onClickdeletePostIt(event) {
 
     event.target.remove()
 }
+/**RANDOM QUOTE____________
+ **************************/
+function displayQuote(quote) {
+    document.querySelector("#quote p").innerHTML = `"${quote.content}"`
+    document.querySelector("#quote span").innerHTML = quote.originator.name
+    console.log(quote)
+}
+function newQuoteOnClick() {
 
+    ajaxJsonApi(displayQuote)
+}
+function ajaxJsonApi(callback) {
+    fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "5580bb8b22mshf8aff281808d06ep16f60cjsn3c82a544bf84",
+            "x-rapidapi-host": "quotes15.p.rapidapi.com"
+        }
+    })
+        .then((response) => response.json())
+        .then((datas) => callback(datas));
+}
 /**CODE PRINCIPALE_________
  **************************/
 document.addEventListener("DOMContentLoaded", function () {
@@ -56,5 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
     newItemForm.addEventListener("click", addPostIt)
     //deletePostIt.addEventListener("click", onClickdeletePostIt)
     deletePostIt.addEventListener("click", onClickdeletePostIt);
+    document.querySelector("#newQuote").addEventListener("click", newQuoteOnClick)
 
 });
