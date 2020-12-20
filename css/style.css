@@ -26,6 +26,9 @@ h2 {
   color: white;
   font-size: 20px;
 }
+body {
+  background-color: var(--black);
+}
 /*-_-_-_-_-_-_-_-_-_-_HEADER-_-_-_-_-_-_-_-_-_-_*/
 header {
   background-color: var(--black);
@@ -43,7 +46,6 @@ header {
   font-size: 15px;
   color: var(--black);
   background-color: white;
-  /*border: 1.3px solid var(--black);*/
 }
 #roman span {
   font-family: "IBM Plex Mono", monospace;
@@ -66,10 +68,25 @@ header {
   border: 2px solid var(--black);
   padding: 10px;
   word-wrap: break-word;
+  cursor: pointer;
 }
 #post-it input {
   font-size: 14px;
   border: none;
   background-color: white;
+  color: var(--black);
+}
+/*-_-_-_-_-_-_-_-_-_-_QUOTE-_-_-_-_-_-_-_-_-_-_*/
+#quote {
+  background-color: var(--purple);
+  padding: 60px 0px;
+}
+#showQuote {
+  border: 2px solid #643047;
+  padding: 20px;
+  color: white;
+}
+#quote button {
+  border: none;
   color: var(--black);
 }
