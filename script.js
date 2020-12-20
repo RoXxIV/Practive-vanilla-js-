@@ -1,3 +1,6 @@
+var token = config.MY_API_TOKEN;
+var key = config.SECRET_API_KEY;
+
 /**VARIABLE____________
  **************************/
 /**Roman Number*/
@@ -61,7 +64,7 @@ function ajaxJsonApi(callback) {
     fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "5580bb8b22mshf8aff281808d06ep16f60cjsn3c82a544bf84",
+            "x-rapidapi-key": token,
             "x-rapidapi-host": "quotes15.p.rapidapi.com"
         }
     })
