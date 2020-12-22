@@ -90,3 +90,19 @@ header {
   border: none;
   color: var(--black);
 }
+/*-_-_-_-_-_-_-_-_-_-_ARRAY-_-_-_-_-_-_-_-_-_-_*/
+#array {
+  padding: 50px 0px;
+  background-color: var(--green);
+}
+#array p {
+  font-size: 20px;
+  color: white;
+}
+#array p span {
+  margin: 0px 10px;
+}
+#array button {
+  border: none;
+  color: var(--black);
+}
