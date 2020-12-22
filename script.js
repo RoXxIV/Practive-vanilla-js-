@@ -1,6 +1,5 @@
+//stock cle api
 var token = config.MY_API_TOKEN;
-var key = config.SECRET_API_KEY;
-
 /**VARIABLE____________
  **************************/
 /**Roman Number*/
@@ -16,6 +15,13 @@ let newItemForm = document.querySelector("input[type='submit']");
 let list = document.querySelector("#post-it ul");
 let newPostItText;
 let deletePostIt = document.querySelector("#post-it ul");
+/**array*/
+let newArray;
+let indexList = document.querySelectorAll("#inputList li input")
+let FilledArray = document.querySelector("#FilledArray")
+let htmlArray = document.querySelector("#array p")
+let sortButton = document.querySelector("#sort")
+
 /**ROMAN NUMBER____________
  **************************/
 /*function */
@@ -35,6 +41,7 @@ function convertToRoman(num) {
 
     romanResult.innerHTML = convert
 }
+
 /**POST-IT____________
  **************************/
 //ajout dun nouveau post
@@ -71,6 +78,30 @@ function ajaxJsonApi(callback) {
         .then((response) => response.json())
         .then((datas) => callback(datas));
 }
+/**Array_________
+ **************************/
+function fillOnClick() {
+    newArray = []
+    for (let i = 0; i < indexList.length; i++) {
+        newArray.push(indexList[i].value)
+    }
+    showArray(newArray)
+}
+function showArray(arr) {
+    myarr = `[`
+    for (item of arr) {
+        myarr += `<span>${item}  </span>`
+    }
+    myarr += `]`
+    htmlArray.innerHTML = myarr
+
+}
+function sortOnClick() {
+    newArray.sort(function (a, b) {
+        return a - b;
+    })
+    showArray(newArray)
+}
 /**CODE PRINCIPALE_________
  **************************/
 document.addEventListener("DOMContentLoaded", function () {
@@ -81,5 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //deletePostIt.addEventListener("click", onClickdeletePostIt)
     deletePostIt.addEventListener("click", onClickdeletePostIt);
     document.querySelector("#newQuote").addEventListener("click", newQuoteOnClick)
-
+    /**Array*/
+    FilledArray.addEventListener("click", fillOnClick)
+    sortButton.addEventListener("click", sortOnClick)
 });
+
