@@ -21,6 +21,8 @@ let indexList = document.querySelectorAll("#inputList li input")
 let FilledArray = document.querySelector("#FilledArray")
 let htmlArray = document.querySelector("#array p")
 let sortButton = document.querySelector("#sort")
+let deleteEven = document.querySelector("#deleteEven");
+let sumAll = document.querySelector("#sum");
 
 /**ROMAN NUMBER____________
  **************************/
@@ -78,6 +80,7 @@ function ajaxJsonApi(callback) {
         .then((response) => response.json())
         .then((datas) => callback(datas));
 }
+
 /**Array_________
  **************************/
 function fillOnClick() {
@@ -102,6 +105,14 @@ function sortOnClick() {
     })
     showArray(newArray)
 }
+function removeEvenOnCLick() {
+    const evenArray = newArray.filter((nb) => nb % 2 !== 0);
+    newArray = evenArray
+    showArray(newArray);
+}
+function sumAllOnCLick() {
+    // a faire...
+}
 /**CODE PRINCIPALE_________
  **************************/
 document.addEventListener("DOMContentLoaded", function () {
@@ -115,5 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /**Array*/
     FilledArray.addEventListener("click", fillOnClick)
     sortButton.addEventListener("click", sortOnClick)
+    deleteEven.addEventListener("click", removeEvenOnCLick);
+    sumAll.addEventListener("click", sumAllOnCLick);
 });
 
