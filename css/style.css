@@ -76,6 +76,9 @@ header {
   background-color: white;
   color: var(--black);
 }
+#post-it li {
+  margin-top: 20px;
+}
 /*-_-_-_-_-_-_-_-_-_-_QUOTE-_-_-_-_-_-_-_-_-_-_*/
 #quote {
   background-color: var(--purple);
